@@ -1,0 +1,49 @@
+.popup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    box-shadow: -1px 2px 5px 1px rgb(0 0 0 / 70%), -1px 2px 20px rgb(255 255 255 / 60%) inset;
+    padding: 10px;
+}
+
+.popup form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.popup h1 {
+	margin: 10px 0;
+}
+
+.popup__data {
+	display: flex;
+	flex-direction: column;	
+}
+
+.popup__data label {
+	display: none;
+}
+
+.popup__data input {
+	box-sizing: border-box;
+	height: 30px;
+	width: 250px;
+	padding: 10px;
+	text-indent: 20px;
+	margin: 5px 10px;
+}
+
+.popup__data input[type=password]:not(:placeholder-shown) {
+	letter-spacing: 10px;
+}
+
+.popup__data i {
+	position: relative;
+	height: 40px;
+	width: 30px;
+	margin-bottom: -40px;
+	margin-left: 15px;
+	display: flex;
+	align-items: center;
+}

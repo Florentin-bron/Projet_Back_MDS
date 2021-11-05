@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta nam="viewport" content="width=device-width, initiale-scale=1.0">
+	<title>Hello</title>
+	<link rel="icon" href="data:;base64,iVBORw0KGgo">
+	<link rel='stylesheet' th:href="@{css/reset.css}">
+	<link rel='stylesheet' th:href="@{css/global.css}">
+</head>
+
+<body>
+	<th:block th:replace="fragments/header.html :: default"></th:block>
+	<div class="page--v-centered">
+		<i />sports_esports</i>
+		<h1>Ready ?</h1>
+			<a th:href="@{/}" class="button">Go back</a>
+		<th:block th:replace="fragments/footer.html :: default"></th:block>
+	</div>
+</body>
+
+</html>

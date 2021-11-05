@@ -1,0 +1,144 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+i,.icons,.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+html {
+	font-family: Roboto;
+	font-size: 16px;
+}
+
+h1 {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.page--v-centered { 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh 
+}
+
+.page--v-centered > header {
+	background-color: rgba(0,0,0,0.1);	
+	position: absolute;
+	box-sizing: border-box;
+	width: 100%;
+	top: 0;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 12px;
+	padding: 0 20px;
+}
+
+.page--v-centered > header .profil {
+	display: flex;
+	flex-direction: row;
+}
+
+.page--v-centered > header .profil .profil__name {
+	margin-right: 10px;
+}
+
+.page--v-centered > header .profil i {
+	font-size: 10px;
+}
+
+.page--v-centered > footer {
+	position: absolute;
+	bottom: 0;
+	height: 20px;
+	font-size: 12px;
+}
+
+.button {
+  align-items: center;
+  background-color: initial;
+  background-image: linear-gradient(#464d55, #25292e);
+  border-radius: 8px;
+  border-width: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .1),0 3px 6px rgba(0, 0, 0, .05);
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  font-family: expo-brand-demi,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 18px;
+  justify-content: center;
+  line-height: 1;
+  margin: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 32px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 150ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  height: 30px;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+  opacity: .85;
+}
+
+.button:active {
+  outline: 0;
+}
+
+.button:focus {
+  box-shadow: rgba(0, 0, 0, .5) 0 0 0 3px;
+}
+
+.header-main{
+	background-color: grey;
+	text-align: center;
+	padding: 10px;
+}
+
+.footer-main{
+	text-align: center;
+	padding: 10px;
+}
