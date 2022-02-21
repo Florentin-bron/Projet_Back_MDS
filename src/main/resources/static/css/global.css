@@ -85,6 +85,7 @@ h1 {
 }
 
 .page--v-centered > footer {
+	background-color: rgba(0,0,0,0.1);
 	position: absolute;
 	bottom: 0;
 	height: 20px;
@@ -139,6 +140,7 @@ h1 {
 }
 
 .footer-main{
+	background-color: grey;
 	text-align: center;
 	padding: 10px;
 }

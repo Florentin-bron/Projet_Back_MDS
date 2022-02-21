@@ -8,14 +8,35 @@
 	<link rel="icon" href="data:;base64,iVBORw0KGgo">
 	<link rel='stylesheet' th:href="@{css/reset.css}">
 	<link rel='stylesheet' th:href="@{css/global.css}">
+	<script th:src="@{js/jquery/jquery-1.12.4.js}"></script>
+	<script th:src="@{js/jquery/jquery-ui.js}"></script>
 </head>
 
 <body>
-	<th:block th:replace="fragments/header.html :: default"></th:block>
-	<div class="page--v-centered">
+	<div class="page--v-centered" style="background-image: url(images/degrade2.png);">
 		<i />sports_esports</i>
-		<h1>Battle</h1>
-		<a th:href="@{/login}" class="button">Login</a>
+		<h1>Bonjour</h1>
+		<a th:href="@{/rules}" class="button">Règles</a>
+		<a th:href="@{/login}" class="button">Login</a>		
+		<button class="button" onclick="presjeu()">Présentation</button>
+		<a href="https://iello.fr/regles/Spicy_Rulebook.pdf" target="_blank"><button class="button">Règles du jeu</button></a>
+
+		<div id="divpre" style="display:none;">
+			Trois chats luttaient encore et toujours pour savoir lequel était le plus fort du royaume. Comme ils ne parvenaient jamais à se départager, ils eurent l’idée d’un concours épique. Quel est celui d’entre eux qui serait capable de manger les plats les plus épicés ? Une idée, assurément, qui ne manquait pas de sel ! Le concours fut organisé… et les chats commencèrent alors à déguster…
+
+			<br>Spicy est un réjouissant jeu de cartes dans lequel de 2 à 5 joueurs tentent d’imposer leur supériorité en dégustant des plats épicés… ou en faisant croire qu’ils le font ! Le bluff est en effet de la partie, et il sera tout à fait possible (voire conseillé) de mentir sur les cartes jouées.
+		</div>
+
+		<script>
+			function presjeu() {
+  				var div = document.getElementById("divpre");
+  				if (div.style.display === "none") {
+    				div.style.display = "block";
+  				} else {
+    				div.style.display = "none";
+  				}
+			}
+		</script>
 	</div>
 	<th:block th:replace="fragments/footer.html :: default"></th:block>
 

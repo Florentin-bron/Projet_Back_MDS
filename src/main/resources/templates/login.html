@@ -13,7 +13,7 @@
 
 <body class="page--v-centered">
 	<th:block th:replace="fragments/header.html :: default"></th:block>
-	<main class="popup" id="credentials">
+	<main class="popup" id="credentials" style="background-image: url(images/degrade2.png);">
 		<h1 th:text="#{popup.login.title}"></h1 >
 		<form th:action="@{/login}" method="post" autocomplete="off">
 			<div class="popup__data">
@@ -25,6 +25,7 @@
 				<input type="password" name="password" th:placeholder="#{popup.login.password.ph}" required maxlenght="50">
 			</div>
 			<input type="submit" value="Entrer" class="button">
+			<a th:href="@{/inscription}" class="button">Inscription</a>
 		</form>
 	</main>
 	<th:block th:replace="fragments/footer.html :: default"></th:block>

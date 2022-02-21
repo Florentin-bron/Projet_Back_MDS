@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Broadcast WebSocket</title>
+		<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <script th:src="@{js/lib/sockjs.js}"></script>
+        <script th:src="@{js/lib/stomp.js}"></script>
+        <script th:src="@{js/broadcast.js}"></script>
+        <script type="text/javascript">
+            var broadcast = new Broadcast();
+            
+            broadcast.onConnected = function(connected) {
+				var name = document.getElementById('from').value || 'inconnu';
+                document.getElementById('connect').disabled = connected;
+                document.getElementById('disconnect').disabled = !connected;
+                document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
+                document.getElementById('from').style.visibility = !connected ? 'visible' : 'hidden';
+                document.getElementById('welcome').innerHTML = connected ? 'Welcome ' + name : '';
+                document.getElementById('response').innerHTML = '';
+            }
+            
+            broadcast.onMessage = function(from, text) {
+                var response = document.getElementById('response');
+                var p = document.createElement('p');
+                p.style.wordWrap = 'break-word';
+                p.appendChild(document.createTextNode(from + ": " + text));
+                response.appendChild(p);
+			}
+            
+            function connect()      { broadcast.connect(document.getElementById('from').value); }
+            function disconnect() 	{ broadcast.disconnect(); }
+            function talk() 		{ broadcast.send(document.getElementById('text').value);
+            }
+        </script>
+    </head>
+    <body onload="disconnect()">
+        <div>
+            <div>
+                <input type="text" id="from" placeholder="Choose a nickname"/>
+                <p id="welcome"></p>
+            </div>
+            <br />
+            <div>
+                <button id="connect" onclick="connect();">Connect</button>
+                <button id="disconnect" disabled="disabled" onclick="disconnect();">
+                    Disconnect
+                </button>
+            </div>
+            <br />
+            <div id="conversationDiv">
+                <input type="text" id="text" placeholder="Write a message..."/>
+                <button id="sendMessage" onclick="talk();">Send</button>
+                <p id="response"></p>
+            </div>
+        </div>
+
+    </body>
+</html>
+

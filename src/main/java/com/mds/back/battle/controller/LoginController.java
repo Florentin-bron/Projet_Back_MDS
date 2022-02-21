@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mds.back.battle.BattleSettings;
+import com.mds.back.battle.configuration.settings.BattleSettings;
 import com.mds.back.battle.domain.User;
 import com.mds.back.battle.repository.UserRepository;
 

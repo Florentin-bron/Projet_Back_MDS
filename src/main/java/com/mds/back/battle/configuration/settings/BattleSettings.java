@@ -1,4 +1,4 @@
-package com.mds.back.battle;
+package com.mds.back.battle.configuration.settings;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
