@@ -1,24 +1,57 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+
+
 <head>
-	<meta charset="UTF-8">
-	<meta nam="viewport" content="width=device-width, initiale-scale=1.0">
-	<title>Hello</title>
-	<link rel="icon" href="data:;base64,iVBORw0KGgo">
-	<link rel='stylesheet' th:href="@{css/reset.css}">
-	<link rel='stylesheet' th:href="@{css/global.css}">
+    <meta charset="UTF-8">
+    <meta nam="viewport" content="width=device-width, initiale-scale=1.0">
+    <title>Podium</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo">
+    <link rel='stylesheet' th:href="@{css/reset.css}">
+    <link rel='stylesheet' th:href="@{css/global.css}">
+    <link rel='stylesheet' th:href="@{css/podium.css}">
 </head>
 
-<body>
-	<th:block th:replace="fragments/header.html :: default"></th:block>
-	<div class="page--v-centered" style="background-image: url(images/degrade2.png);">
-		<i />sports_esports</i>
-		<h1>Podium</h1>
-			<a th:href="@{/home}" class="button">Quitter</a>
-			<a th:href="@{/lobby}" class="button">Rejouer</a>
-	</div>
-	<th:block th:replace="fragments/footer.html :: default"></th:block>
+
+
+<body onload="move()">
+    <th:block th:replace="fragments/header.html :: default"></th:block>
+    <script src="js/app/podium.js"></script>
+    <div class="page--v-centered">
+        <h1>Podium</h1>
+        <i>equalizer</i>
+        <div id="player_comparison">
+            <p>Le joueur le plus sage est</p>
+            <p>Le pire menteur est</p>
+            <p>Celui dont on ne doit pas faire confiance : </p>
+            <p>L'oeil le plus percent appartient à </p>
+        </div>
+        <div id="players_resumes">
+            <h2>Résumé</h2>
+            <div class="block__elem" id="player_resume">
+                <h3>Nom du joueur</h3>
+                <ul>
+                    <li>Expérience gagnée :</li>
+                    <div class="container">
+                        <div class="progess-total">
+                            <div id="myBar" class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <li>Total de contestation(s) ratée(s) :</li>
+                    <li>Total de contestation(s) réussie(s) :</li>
+                    <li>Total de mensonge(s) :</li>
+                    <li>Total de vérité(s) :</li>
+                    <li>Total de tour(s) passé(s)</li>
+                </ul>
+            </div>
+        </div>
+        <a th:href="@{/home}" class="button">Quitter</a>
+        <a th:href="@{/lobby}" class="button">Rejouer</a>
+        <th:block th:replace="fragments/footer.html :: default"></th:block>
+    </div>
 </body>
+
+
 
 </html>
